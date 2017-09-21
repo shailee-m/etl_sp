@@ -40,65 +40,46 @@ function processFiles(fileName) {
 
 }
 
-function getDate(date, time) {
-  var d = date;
-
-
-  var c = time;
-  var a = d.getFullYear() + "-" + (d.getMonth() + 1) < 10 ? (("0" + d.getMonth() + 1)) : (d.getMonth() + 1) + "-" + d.getDate();
-  // var a = d.getDate() + "-" + (d.getMonth() + 1) < 10 ? (("0" + d.getMonth() + 1)) : (d.getMonth() + 1) + "-" + d.getFullYear();
-  var e = a + "T" + c + ":000Z";
-  // e;
-  return new Date(e);
-  //a;
-  //dDate;
-}
-
 /*function getBucket(argument) {
   return shifts[0];
 }*/
 function getBucket(startTime) {
   var time;
-  for (var i = 0; i < shifts.length; i++) {
-    var bucketStartTime = moment(shifts[i].st, "h:mm:ss");
-    var bucketEndTime = moment(shifts[i].et, "h:mm:ss");
-    console.log(shifts[i].st,shifts[i].et,startTime);
-    startTime = moment(startTime, "h:mm:ss");
+  for (i = 0; i < shifts.length; i++) {
+    var bucketStartTime = moment.utc(shifts[i].st, "h:mm:ss").local();
+    var bucketEndTime = moment.utc(shifts[i].et, "h:mm:ss").local();
+    startTime = moment.utc(startTime, "h:mm:ss").local();
     // console.log()
-    
-    // console.log(shifts[i],startTime)
-    if (startTime.isSameOrAfter(bucketStartTime) && startTime.isBefore(bucketEndTime)) {
+    // console.log("bucketStartTime,bucketEndTime,startTime", bucketStartTime, bucketEndTime, startTime);
+
+    if ((startTime.diff(bucketStartTime) == 0) || (startTime.isAfter(bucketStartTime) && startTime.isBefore(bucketEndTime))) {
       // return shifts[i]
       shifts[i].differnce = bucketEndTime.diff(startTime)
       time = new Object(shifts[i]);
-      // return time
-      console.log("time", time)
-      break;
+      return time
+        // cb(shifts[i]);
+        // 
+    }
+  }
+  /*shifts.forEach(function(shifts[i], index) {
+    var bucketStartTime = moment.utc(shifts[i].st, "h:mm:ss").local();
+    var bucketEndTime = moment.utc(shifts[i].et, "h:mm:ss").local();
+    startTime = moment.utc(startTime, "h:mm:ss").local();
+    // console.log()
+    // console.log("bucketStartTime,bucketEndTime,startTime", bucketStartTime, bucketEndTime, startTime);
+
+    if ((startTime.diff(bucketStartTime) == 0) || (startTime.isAfter(bucketStartTime) && startTime.isBefore(bucketEndTime))) {
+      // return shifts[i]
+      shifts[i].differnce = bucketEndTime.diff(startTime)
+      time = new Object(shifts[i]);
       // cb(shifts[i]);
       // 
     }
-  }
 
-  return time
-    /*shifts.forEach(function(shifts[i], index) {
-      var bucketStartTime = moment.utc(shifts[i].st, "h:mm:ss").local();
-      var bucketEndTime = moment.utc(shifts[i].et, "h:mm:ss").local();
-      startTime = moment.utc(startTime, "h:mm:ss").local();
-      // console.log()
-      // console.log("bucketStartTime,bucketEndTime,startTime", bucketStartTime, bucketEndTime, startTime);
+  });
+      console.log(time)
 
-      if ((startTime.diff(bucketStartTime) == 0) || (startTime.isAfter(bucketStartTime) && startTime.isBefore(bucketEndTime))) {
-        // return shifts[i]
-        shifts[i].differnce = bucketEndTime.diff(startTime)
-        time = new Object(shifts[i]);
-        // cb(shifts[i]);
-        // 
-      }
-
-    });
-        console.log(time)
-
-    return time*/
+  return time*/
 
 }
 
@@ -126,7 +107,7 @@ function processJson(jArray) {
       var newEntry = new Object(e);
       var bucket = getBucket(curr);
       // endTime = bucket.end();
-      console.log("bucket", bucket)
+
       if (bucket.type == "break") {
         newEntry['Plan Start Date'] = curr;
         // var currDT = moment(curr)
@@ -151,7 +132,30 @@ function processJson(jArray) {
   });
 }
 
+/*
 
+var curr = e['Plan Start Date']
+while (curr.isBefore(planEndTime)) {
+  var newEntry = new Object(e);
+  var a = getBucket(curr);
+  endTime = bucket.end();
+
+  if (bucket.type == "break") {
+    newEntry['Plan Start Date'] = curr;
+    newEntry['Plan End Date'] = bucket.et;
+    newEntry['status'] = 0;
+    transformed.push(newEntry);
+  } else {
+    newEntry['Plan Start Date'] = curr;
+    newEntry['Plan End Date'] = bucket.et;
+    newEntry['status'] = 1;
+    transformed.push(newEntry);
+  }
+  curr = bucket.et;
+
+}
+
+ */
 
 
 
