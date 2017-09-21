@@ -1,34 +1,36 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@3.10.8
-3 info using node@v6.9.0
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.5
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle sunp_et@1.0.0~prestart: sunp_et@1.0.0
 6 silly lifecycle sunp_et@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle sunp_et@1.0.0~start: sunp_et@1.0.0
 8 verbose lifecycle sunp_et@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle sunp_et@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/shailee/etl_sp/node_modules/.bin:/usr/local/rvm/gems/ruby-2.4.0/bin:/usr/local/rvm/gems/ruby-2.4.0@global/bin:/usr/local/rvm/rubies/ruby-2.4.0/bin:/home/shailee/.rbenv/shims:/home/shailee/.rbenv/bin:/home/shailee/.rbenv/plugins/ruby-build/bin:/home/shailee/.rbenv/plugins/ruby-build/bin:/home/shailee/.rbenv/shims:/home/shailee/.rbenv/bin:/usr/local/rvm/gems/ruby-2.4.0/bin:/usr/local/rvm/gems/ruby-2.4.0@global/bin:/usr/local/rvm/rubies/ruby-2.4.0/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/rvm/bin:/home/shailee/.local/bin:/home/shailee/bin:JAVA_HOME/bin:SCALA_HOME/bin:SBT_HOME/bin:MAVEN_HOME/bin
-10 verbose lifecycle sunp_et@1.0.0~start: CWD: /home/shailee/etl_sp
-11 silly lifecycle sunp_et@1.0.0~start: Args: [ '-c',
+9 verbose lifecycle sunp_et@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Avinash\Documents\GitHub\etl_sp\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Java\jdk1.8.0_31\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\sbt\bin;C:\Program Files\R\R-3.3.2\bin\x64;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Yarn\bin;C:\Program Files\PuTTY\;C:\Users\Avinash\AppData\Local\Microsoft\WindowsApps;C:\Users\Avinash\AppData\Roaming\npm;C:\Users\Avinash\AppData\Local\Yarn\bin;
+10 verbose lifecycle sunp_et@1.0.0~start: CWD: C:\Users\Avinash\Documents\GitHub\etl_sp
+11 silly lifecycle sunp_et@1.0.0~start: Args: [ '/d /s /c',
 11 silly lifecycle   'TZ=\'/usr/share/zoneinfo/GMT+0\' && export TZ && node index.js' ]
 12 silly lifecycle sunp_et@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle sunp_et@1.0.0~start: Failed to exec start script
 14 verbose stack Error: sunp_et@1.0.0 start: `TZ='/usr/share/zoneinfo/GMT+0' && export TZ && node index.js`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid sunp_et@1.0.0
-16 verbose cwd /home/shailee/etl_sp
-17 error Linux 3.10.0-514.16.1.el7.x86_64
-18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-19 error node v6.9.0
-20 error npm  v3.10.8
+16 verbose cwd C:\Users\Avinash\Documents\GitHub\etl_sp
+17 error Windows_NT 10.0.15063
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+19 error node v6.9.5
+20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error sunp_et@1.0.0 start: `TZ='/usr/share/zoneinfo/GMT+0' && export TZ && node index.js`
 22 error Exit status 1
