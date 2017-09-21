@@ -6,7 +6,7 @@ const csv = require("csvtojson");
 
 var moment = require("moment")
 var async = require("async")
-
+var shifts = [{ st: '23:00:00', et: "01:00:00", type: "break" }, { st: '08:00:00', et: "09:00:00", type: "break" }, { st: "01:00:00", et: "08:00:00",type:"shift" }, { st: "09:00:00", et: "16:00:00",type:"shift" }, { st: "16:00:00", et: "23:00:00",type:"shift" }];
 // var json2csv = require('json2csv');
 
 
@@ -18,7 +18,7 @@ function readFiles(cb) {
   cb()
 }
 var results = {}
-var fullFileName = '/home/anokhi/UserManagement_Insight.csv'
+var fullFileName = '/home/shailee/production_plan.csv'
 
 function processFiles(fileName) {
   var jsonObjects = [];
@@ -27,7 +27,7 @@ function processFiles(fileName) {
 
     jsonObjects.push(jsonObj)
   }).on('done', (error) => {
-
+    processJson(jsonObjects)
 
   })
 
@@ -37,7 +37,19 @@ function processFiles(fileName) {
 
 }
 
+function getTimeSolt(date) {
 
+
+  shifts.breakTime.forEach(function(e, i) {
+    if ()
+  })
+}
+
+function processJson(jArray) {
+  jArray.every(function(e, i) {
+
+  });
+}
 
 
 

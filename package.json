@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "TZ='/usr/share/zoneinfo/GMT+0' && export TZ && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
